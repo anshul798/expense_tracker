@@ -67,10 +67,11 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void _deleteTransaction(String id){
+  void _deleteTransaction(String item, int index){
     setState(() {
-      _userTransactions.removeWhere((tx) => tx.id == id);
+      _userTransactions.removeAt(index);
     });
+    Scaffold.of(context).showSnackBar(SnackBar(content: Text("$item dismissed"),));
   }
 
   void _startAddNewTransaction(BuildContext ctx) {
