@@ -71,7 +71,6 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _userTransactions.removeAt(index);
     });
-    Scaffold.of(context).showSnackBar(SnackBar(content: Text("$item dismissed"),));
   }
 
   void _startAddNewTransaction(BuildContext ctx) {
