@@ -88,6 +88,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 20,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30)
+        ),
         centerTitle: true,
         title: Text('TrackMe'),
         actions: <Widget>[

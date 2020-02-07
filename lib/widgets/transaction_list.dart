@@ -97,6 +97,9 @@ class TransactionList extends StatelessWidget {
                       ));
                     },
                     child: Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40)
+                      ),
                       elevation: 5,
                       margin: EdgeInsets.symmetric(vertical: 8, horizontal: 5),
                       child: ListTile(

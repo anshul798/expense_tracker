@@ -39,7 +39,7 @@ class _NewTransactionState extends State<NewTransaction> {
             context: context,
             initialDate: DateTime.now(),
             firstDate: DateTime(2019),
-            lastDate: DateTime.now())
+            lastDate: DateTime.now(),)
         .then((pickedDate) {
       if (pickedDate == null) return;
       setState(() {
@@ -62,6 +62,9 @@ class _NewTransactionState extends State<NewTransaction> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
+              SizedBox(
+                height: 10,
+              ),
               TextField(
                 decoration: InputDecoration(
                   fillColor: Theme.of(context).primaryColor,
@@ -110,6 +113,7 @@ class _NewTransactionState extends State<NewTransaction> {
                 keyboardType: TextInputType.number,
                 onSubmitted: (_) => _submitData(),
               ),
+
               Container(
                 height: 70,
                 child: Row(
@@ -133,6 +137,7 @@ class _NewTransactionState extends State<NewTransaction> {
                   ],
                 ),
               ),
+              SizedBox(height: 20,),
               Container(
                 width: double.infinity,
                 height: 40,
