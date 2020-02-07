@@ -106,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Chart(_recentTransactions),
-            TransactionList(_userTransactions,_deleteTransaction)
+            TransactionList(transactions: _userTransactions,updateList: _updateMyItems,deleteTx: _deleteTransaction,)
           ],
         ),
       ),
@@ -118,4 +118,18 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+
+  void _updateMyItems(int oldIndex, int newIndex) {
+    setState(() {
+      if(newIndex > oldIndex){
+        newIndex -= 1;
+      }
+
+      final Transaction item = _userTransactions.removeAt(oldIndex);
+      _userTransactions.insert(newIndex, item);
+    });
+
+
+  }
+
 }

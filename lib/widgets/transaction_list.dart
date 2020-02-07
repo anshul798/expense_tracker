@@ -4,9 +4,10 @@ import 'package:intl/intl.dart';
 
 class TransactionList extends StatelessWidget {
   final List<Transaction> transactions;
+  final Function updateList;
   final Function deleteTx;
 
-  TransactionList(this.transactions, this.deleteTx);
+  TransactionList({@required this.transactions,@required this.updateList, @required this.deleteTx});
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +30,10 @@ class TransactionList extends StatelessWidget {
                 ),
               ],
             )
-          : ListView.builder(
-              itemBuilder: (ctx, index) {
+
+          : ReorderableListView(
+              onReorder: (int oldIndex, int newIndex){updateList(oldIndex,newIndex);},
+              children: List.generate(transactions.length, (index) {
                 final item = transactions[index].title;
                 return Dismissible(
                   key: Key(item),
@@ -126,8 +129,9 @@ class TransactionList extends StatelessWidget {
                   ),
                 );
               },
-              itemCount: transactions.length,
-            ),
+
+              )
+      ),
     );
   }
 }
