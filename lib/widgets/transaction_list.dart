@@ -39,6 +39,9 @@ class TransactionList extends StatelessWidget {
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)
+                          ),
                           title: const Text("Confirm"),
                           content: const Text("Are you sure you wish to delete this item?"),
                           actions: <Widget>[

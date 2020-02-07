@@ -1,9 +1,10 @@
 import 'package:flutter/foundation.dart';
 class Transaction {
-  final String id;
-  final String title;
-  final double amount;
-  final DateTime date;
+   int Id;
+   String id;
+   String title;
+   double amount;
+   DateTime date;
 
   Transaction({
     @required this.id,
@@ -11,4 +12,22 @@ class Transaction {
     @required this.amount,
     @required this.date
   });
+
+
+  Map<String, dynamic> toMap(){
+    var map = <String, dynamic>{
+      'id':Id,
+      'title':title,
+      'amount':amount,
+      'date':date
+    };
+    return map;
+  }
+
+  Transaction.fromMap(Map<String, dynamic> map){
+    Id = map['id'];
+    title =  map['title'];
+    amount = map['amount'];
+    date = map['date'];
+  }
 }
