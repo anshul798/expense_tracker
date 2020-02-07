@@ -70,17 +70,23 @@ class TransactionList extends StatelessWidget {
                   background: Container(
                     color: Colors.red,
                     alignment: AlignmentDirectional.centerStart,
-                    child: Icon(
-                      Icons.delete,
-                      color: Colors.white,
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Icon(
+                        Icons.delete,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   secondaryBackground: Container(
                     color: Colors.amber[700],
                     alignment: AlignmentDirectional.centerEnd,
-                    child: Icon(
-                      Icons.delete,
-                      color: Colors.white,
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Icon(
+                        Icons.delete,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   child: InkWell(

@@ -75,6 +75,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _startAddNewTransaction(BuildContext ctx) {
     showModalBottomSheet(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(50.0)
+      ),
         context: ctx,
         builder: (bCtx) {
           return NewTransaction(_addNewTransaction);
@@ -105,6 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
+        elevation: 10,
         child: Icon(Icons.add),
         onPressed: () => _startAddNewTransaction(context),
       ),
